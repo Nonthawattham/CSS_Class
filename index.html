@@ -5,88 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clothing & Accessories</title>
     <style>
+        .Nav_bar_B {
+            text-align: center;
+            border-radius: 50px;
+            background-color: #DDD4E7;
+            padding: 20px 0;  /* Ensures padding around the header contents */
+        }
         
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #D4B6CA;
         }
-
+        
         header {
-            background-color: #ffffff;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 50px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 0 50px;  /* Adjusted padding to suit header layout */
+            background-color: transparent;
         }
-
-        .nav-links {
+        
+        .logo img {
+            width: 100px;
+        }
+        
+        .navbar {
             display: flex;
-            gap: 30px;
+            justify-content: center;
+            background-color: #f4f4f4;
+            border-radius: 50px;
+            padding: 10px 40px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            gap: 20px;
         }
-
-        .nav-links a {
+        
+        .navbar a {
             text-decoration: none;
             color: black;
             font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
+        .navbar a.active {
+            background-color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar a:hover {
+            background-color: #ececec;
+        }
+        
         .search-login {
             display: flex;
             gap: 20px;
         }
-
+        
         .search-login a {
             text-decoration: none;
             color: black;
             font-weight: bold;
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
+        .search-login a:hover {
+            background-color: #ececec;
+        }
+        
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background-color: #e9e9e9;
+            padding: 30px 20px;
+            border-radius: 50px;
+            background-color: #BFAFD0;
         }
-
+        
         .hero h1 {
-            font-size: 60px;
+            text-align: left;
+            font-size: 80px;
             margin: 0;
         }
-
-        .hero p {
-            font-size: 24px;
-            margin: 20px 0;
-        }
-
+        
         .hero img {
-            width: 100px;
-            border-radius: 50%;
+            width: 200px;
+            height: 70px;
+            border-radius: 50px;
+            object-fit: cover;
         }
-
+        
         .scroll-down {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 40px;
+            text-align: right;
+            width: 100%;
         }
-
-        .scroll-down button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
+        
+        .scroll-down .left-button,
+        .scroll-down .right-buttons button {
             background-color: black;
             color: white;
             cursor: pointer;
             border-radius: 50px;
+            padding: 10px 20px;
+            border: none;
         }
-
-        /* Image Grid */
+        
+        .scroll-down .right-buttons {
+            display: flex;
+        }
+        
+        .scroll-down .right-buttons button {
+            margin-left: 10px;
+        }
+        
         .image-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 50px;
-            background-color: #ffffff;
+            border-radius: 50px;
+            background-color: #F3D6D3;
         }
-
+        
         .image-grid img {
             width: 100%;
             height: 400px;
@@ -94,65 +140,54 @@
             border-radius: 15px;
             cursor: pointer;
         }
-
-        .image-grid a {
-            display: block;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #ffffff;
-            margin-top: 40px;
-        }
+        
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">
-            <a href="#"><img src="logo.jfif" alt="Logo" width="50"></a>
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Men</a>
-            <a href="#">Women</a>
-            <a href="#">Kids</a>
-            <a href="#">Sale</a>
-        </nav>
-        <div class="search-login">
-            <a href="#">Search</a>
-            <a href="#">Log In</a>
-        </div>
-    </header>
+    <section class="Nav_bar_B">
+        <header>
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Logo"></a>
+            </div>
+            <nav class="navbar">
+                <a href="#" class="active">HOME</a>
+                <a href="#">MEN</a>
+                <a href="#">WOMEN</a>
+                <a href="#">KIDS</a>
+                <a href="#">SALE</a>
+            </nav>
+            <div class="search-login">
+                <a href="#">Search</a>
+                <a href="#">Log In</a>
+            </div>
+        </header>
+    </section>
 
     <section class="hero">
-        <h1>Clothing, Shoes & Accessories</h1>
-        <p>Explore the latest collection</p>
-        <img src="hero-image.jpg" alt="Fashion Image">
+        <h1>CLOTHING, <img src="hero-image.jpg" alt="Fashion Image"> SHOES</h1>
+        <h1>& ACCESSORIES</h1>
         <div class="scroll-down">
-            <button>Scroll Down</button>
+            <button class="left-button">=</button>
+            <div class="right-buttons">
+                <button>Scroll Down</button>
+                <button>↓</button>
+            </div>
         </div>
     </section>
 
     <section class="image-grid">
-        <a href="page1.html">
+        <a href="https://youtu.be/Hy_BVgkKMRg?si=vu8zGHciBkD8m-sD" target="_blank">
             <img src="cat1.jpg" alt="Image 1">
         </a>
-        <a href="page2.html">
+        <a href="https://youtu.be/D1MSMNoqRo4?si=-4Nmz0fSQRByA9_D" target="_blank">
             <img src="cat2.jpg" alt="Image 2">
         </a>
-        <a href="page3.html">
+        <a href="https://youtu.be/7lKLFVHAQMo?si=WshJNoogxxPtok3i" target="_blank">
             <img src="cat3.jpeg" alt="Image 3">
         </a>
-        <a href="page4.html">
+        <a href="https://youtu.be/XJRkTyvoL4k?si=LG4V6cenLY_HEXRK" target="_blank">
             <img src="cat4.jpeg" alt="Image 4">
         </a>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Fashion Store</p>
-    </footer>
-
 </body>
 </html>
